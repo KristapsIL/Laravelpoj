@@ -8,13 +8,14 @@
 <body>
     <h1>Products</h1>
     <main>
+    @foreach($products as $product)
         <article>
-            <h2>Doctor's Sausage</h2>
-            <img src="/images/doctorsausage.jpg" alt="thesausage" width="200px"/>
-            <p>This is the tastiest sausage ever.
-            If you have never eaten this, you haven't lived!</p>
-            <P>1.99 EUR</P>
+            <h2>{{$product->name}}</h2>
+            <img src= {{$product->imageURL}} alt={{$product->name}} width="200px"/>
+            <p>{{$product->description}}</p>
+            <P>1.49 EUR</P>
         </article>
+        @endforeach
     </main>
 </body>
 </html>
