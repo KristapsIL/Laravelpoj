@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/products',[ProductController::class, "view"]);
 
-Route::get("/create", [ProductController::class, "create"]);
-Route::post("/create",[ProductController::class,"store"]);
+Route::get("/products", [ProductController::class, "index"]);
+
+Route::get("/products/create", [ProductController::class, "create"]);
+Route::post("/products", [ProductController::class, "store"]);
